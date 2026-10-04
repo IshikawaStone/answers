@@ -1,134 +1,128 @@
 # Answers(UPI) (Phone App) — Guide
 
-Look, I didn't want to write this, but here we are. This is the Android phone app for **Answers**. It takes photos of MBBS question papers, parses the messy handwriting or printed text with vision AI, generates comprehensive answers with clinical flowcharts, and beams them to your smartwatch or other phones so you don't have to keep squinting at paper.
-
-Here is what every single button and screen does. Don't make me explain it twice.
+Android phone app for **Answers**. Captures exam question papers, extracts questions via vision AI, generates structured clinical answers with flowcharts, and syncs them to smartwatches and peer devices.
 
 ---
 
-## 1. Home Screen (Where You Start)
+## 1. Home Screen
 
 ### Top Bar
-* **AI Provider Pill** (`Gemini` / `OpenRouter`): Tap it to swap AI backends. When Gemini rate-limits you or you want another model, tap this instead of crying.
-* **Pipeline Mode Pill** (`Standard` vs `Honours`): 
-  * `Standard`: Normal, sane, concise medical answers.
-  * `Honours`: Painfully detailed textbook-grade answers with exhaustive differentials and full Reddit-style Mermaid flowchart algorithms.
-* **Cloud Fetch** (Cloud with down arrow): Pulls whatever paper was uploaded to your active Cloudflare relay channel (default: `answers`). Useful if someone else solved the paper for you.
-* **Settings** (Gear icon): Where you put your API keys and channel key so the app actually works instead of throwing errors.
-* **Incomplete Sessions Button** (Refresh icon next to *RECENT PAPERS*):
-  * Opens the recovery screen showing papers that were abandoned, interrupted, or crashed halfway through extraction.
-  * Lets you tap **Resume** to pick up where it choked, or **Delete** to nuke the corrupted state off your storage.
+* **AI Provider Pill** (`Gemini` / `OpenRouter`): Toggles the active AI model backend.
+* **Pipeline Mode Pill** (`Standard` / `Honours`):
+  * `Standard`: Concise, high-yield answers tailored to base marks.
+  * `Honours`: In-depth textbook answers with full differentials and Mermaid flowcharts.
+* **Cloud Fetch** (Cloud icon): Downloads the latest paper uploaded to the active Cloudflare relay channel (`answers`).
+* **Settings** (Gear icon): Configure API keys, provider endpoints, autoscroll defaults, and sync channels.
+* **Incomplete Sessions** (Refresh icon next to *RECENT PAPERS*):
+  * Lists papers interrupted or partially solved.
+  * **Resume**: Continues answer generation where it stopped.
+  * **Delete**: Removes the partial session.
 
-### The Big Three Input Buttons
-* **Take Photo** (Camera): Opens camera. Snap your physical exam paper. Try to hold the phone still.
-* **Pick Image** (Gallery): For when you took a photo earlier, sent it to yourself on WhatsApp, and now want to process it.
-* **Load Sample** (Paper icon): Injects a pre-canned *MBBS Final Professional - General Medicine* paper so you can test features without looking for real papers.
+### Paper Input
+* **Take Photo**: Captures a physical exam paper using the camera.
+* **Pick Image**: Selects an existing photo from device storage.
+* **Load Sample**: Loads a bundled *MBBS Final Professional - General Medicine* sample paper.
 
-### Recent Papers List
-* Shows previously saved papers with total marks, question counts, answered ratios, and date.
+### Recent Papers
+* Displays saved papers with total marks, question count, answered count, and timestamp.
 * Tap any card to open the paper view.
-* When inside a paper, the top-right trash icon deletes it forever.
+* Inside a paper, tap the trash icon in the toolbar to delete it.
 
 ---
 
-## 2. Extraction Screen (Turning Pixels into Structured Questions)
+## 2. Extraction Screen
 
-Once you pick an image, you land here.
+Shown after capturing or selecting a paper image.
 
-* **Cropped Preview**: Shows what the vision model is about to inspect.
-* **Extraction Prompt Dropdown**: Tap the header to expand/collapse the prompt sent to the model. You can edit the text right there if you need to tell the model to ignore watermarks or hospital stamps.
-* **Live Terminal Log**: A dark box that streams stdout/stderr from the pipeline in real-time. If it hangs, look here first.
-* **Peer Devices Radar**: Automatically scans local Wi-Fi / Hotspot for Wear OS watches, Apple Watches, or other phones listening on port `42424`.
-* **Progress Bar**: Shows which step it's on (Image upload -> OCR -> Schema validation -> Question extraction).
-* **Start Extraction**: Actually runs the pipeline.
-* **Stop**: The emergency brake. Kills the network request immediately if the AI starts hallucinating.
-* **Reset**: Throws everything away and sends you back to Home.
+* **Image Preview**: Displays the cropped paper image sent to the vision model.
+* **Extraction Prompt Dropdown**: Expandable panel to inspect or edit the OCR extraction prompt before running.
+* **Terminal Log**: Real-time console log showing pipeline progress and errors.
+* **Peer Devices Radar**: Scans the local network/hotspot for active watches and phones listening on port `42424`.
+* **Progress Bar**: Visual status across OCR, JSON schema validation, and question extraction.
+* **Start Extraction**: Initiates the extraction pipeline.
+* **Stop**: Cancels the running extraction request.
+* **Reset**: Clears the current session and returns to Home.
 
 ---
 
-## 3. Paper View (The Question List & Batch Solver)
+## 3. Paper View
 
-Once extracted, you see the full exam breakdown.
+Displays extracted questions and handles batch solving.
 
 ### Actions
-* **Generate All Answers**: The "I want to go eat dinner" button. Iterates through every unanswered question sequentially, streams answers from AI, saves them to SQLite, and updates progress.
-* **Broadcast Paper**: Sends the entire paper and all its answers over local Wi-Fi / Hotspot directly to connected smartwatches.
-* **Stop Generation**: Pauses the batch solver after the current question finishes.
+* **Generate All Answers**: Sequentially generates answers for all remaining questions, saving each to the local database.
+* **Broadcast Paper**: Sends the full paper and generated answers over local Wi-Fi / hotspot to connected watches.
+* **Stop Generation**: Pauses the batch solver after the active question completes.
 
-### Questions List
-* **Badges**:
+### Question Items
+* **Marks Badges**:
   * `10M` / `15M` (Amber): Long essay questions.
   * `3M` / `5M` (Cyan): Short notes.
-  * `MCQs` (Purple): Consolidated multiple-choice section.
-* **Status**: A green checkmark means the answer is already generated and cached locally. Tap any question to read it.
+  * `MCQs` (Purple): Multiple-choice section.
+* **Status**: A green checkmark indicates an answer is cached locally. Tap any item to open the answer reader.
 
 ---
 
-## 4. Answer Reader (Reading What the AI Wrote)
+## 4. Answer Reader
 
-This is the main reading viewport.
+Main reading interface for individual answers.
 
-### Header & Generation
-* **Question Number & Marks**: Shows what question you're reading.
-* **Generate / Regenerate**: Tap to fetch or rewrite the answer for just this single question.
-* **Prompt Dropdown**: Tap to review the exact clinical prompt used to generate this answer.
+### Header & Actions
+* **Question Title & Marks**: Displays question number and assigned marks.
+* **Generate / Regenerate**: Generates or rewrites the answer for the current question.
+* **Prompt Dropdown**: Displays the clinical prompt template used for the answer.
 
 ### Content Rendering
-* **Clinical Markdown**: Sub-headings, bullet lists, bolded high-yield points, drug dosages, and callout boxes.
-* **Reddit-Style Mermaid Flowcharts**: 
-  * Renders native decision trees directly on AMOLED black.
-  * **Left Threadlines**: Decision forks and `[IF: ...]` branch conditions hook off the left line.
-  * **Right Rails**: Converging paths route exclusively along the right margin into target nodes. No criss-crossing spaghetti.
+* **Markdown**: Structured headings, bullet lists, high-yield bold highlights, tables, and drug dosages.
+* **Mermaid Flowcharts**: Native clinical flowcharts rendered on black background.
+  * **Left Threadline**: Branch forks and `[IF: ...]` decision conditions.
+  * **Right Rail**: Converging paths route down the right side into target nodes.
 
-### Auto-Scroll Floating Controls
-* **Speed Pill** (Bottom-left, e.g. `1x`): Tap to toggle auto-scroll play/pause.
-* **Controls Button** (Slider icon): Opens the Auto-Scroll dialog:
-  * **Scroll Toggle**: Turn auto-scrolling on or off.
-  * **Speed Slider**: 11 discrete steps from super slow (`0.05x`) to speedrun (`5x`).
-  * **Text Size Slider**: 9sp to 17sp.
-  * **Edge Clearance**: Adjust side padding so text isn't cut off by curved phone screens.
-  * **Quick Presets**: `0.2x`, `0.5x`, `1x`, `2x`.
+### Auto-Scroll Controls
+* **Speed Pill** (Bottom-left): Tap to toggle auto-scroll between play and pause.
+* **Settings Dialog** (Slider icon):
+  * **Toggle**: Enable or disable continuous scrolling.
+  * **Speed**: Discrete steps from `0.05x` to `5x`.
+  * **Text Size**: `9sp` to `17sp`.
+  * **Edge Clearance**: Adjust horizontal margins for curved or bezel-less displays.
+  * **Presets**: Quick-select buttons for `0.2x`, `0.5x`, `1x`, and `2x`.
 
-### Exporting & Sharing
-* **Export Markdown**: Dumps the pure `.md` file to your Downloads folder.
-* **Share Current Paper**: Packs the paper into a `.qaset` archive (or JSON) and opens the Android system share sheet.
+### Export & Share
+* **Export Markdown**: Saves the raw `.md` file to the device Downloads directory.
+* **Share Current Paper**: Exports the paper as a `.qaset` bundle or JSON to the Android share sheet.
 
 ---
 
-## 5. Sync & Communication (Getting Data Out)
-
-You don't just use this on the phone. It's meant to sync everywhere without you thinking about it.
+## 5. Sync & Data Transfer
 
 ### Cloud Relay Sync
-* Powered by Cloudflare Workers (`answers-relay.ishikawaadachi.workers.dev`).
-* **Channel Key**: Default is `'answers'`. If you and your friend both set channel `'answers'`, you share the same live cloud paper stream.
-* Tap the cloud download icon on Home to pull the newest paper from the channel.
+* Backend: Cloudflare Workers (`answers-relay.ishikawaadachi.workers.dev`).
+* **Channel Key**: Default is `'answers'`. Devices configured with the same channel name sync papers automatically.
+* Tap Cloud Download on Home to fetch the latest paper uploaded to the active channel.
 
-### Local Wi-Fi / Hotspot Broadcast (Port 42424)
-* No cloud? No problem.
-* The phone spins up a lightweight TCP server on port `42424`.
-* Any Wear OS watch or Apple Watch running Answers on the same Wi-Fi or phone hotspot auto-receives the full `.qaset` package instantly.
+### Local Network Broadcast (Port 42424)
+* Starts a local TCP server on port `42424`.
+* Wear OS and Apple Watch clients on the same Wi-Fi or hotspot receive papers directly without an internet connection.
 
 ### Quick Settings Tile
-* Pull down your Android notification shade.
-* Add the **Answers Receive** tile to quickly toggle background listening mode on or off without opening the app.
+* Android Quick Settings tile: **Answers Receive**.
+* Toggles the background P2P receive listener on or off from the notification shade.
 
 ---
 
-## 6. Prompt Library (Tuning the Brains)
+## 6. Prompt Library
 
-Inside **Settings -> Prompt Library**:
-* **Built-in System Prompts**: Contains default clinical templates for standard MBBS extraction, honours answers, and MCQ solvers.
-* **Custom Prompts**: Add your own prompts if you have specific exam format requirements.
-* **Cloud Sync Prompts**: Downloads updated prompts from the Cloudflare relay. When we patch prompt templates on the server, you tap this to get them without downloading a new APK.
+Accessible via **Settings -> Prompt Library**.
+
+* **Built-in Templates**: Factory prompts for question extraction, MCQ solving, 1.5x candidate drafting, 1.0x distillation, and flowchart summary addons.
+* **Custom Prompts**: Create, edit, and assign custom prompt templates per operation.
+* **Cloud Sync Prompts**: Fetch published prompt updates from the relay server.
 
 ---
 
-## 7. Settings Summary
+## 7. Configuration Reference
 
-* **AI Provider**: Gemini / OpenRouter / Custom.
-* **API Keys**: Stored in encrypted SharedPreferences.
-* **Sync Channel**: Set to `answers`. Don't misspell it.
-* **Autoscroll Defaults**: Set your favorite starting speed and font size so you don't have to adjust it every single time you open a question.
-
-Now stop asking questions and go pass your exams.
+* **AI Provider**: Gemini, OpenRouter, or Custom API endpoint.
+* **API Keys**: Stored securely in encrypted SharedPreferences.
+* **Sync Channel**: Cloud relay channel key (default: `answers`).
+* **Default Auto-Scroll**: Sets initial speed and text size preferences across sessions.
