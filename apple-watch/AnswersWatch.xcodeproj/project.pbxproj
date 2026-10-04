@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B166F8EEFB6C4259A19C08AF /* AnswersWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78A5D0E064948CAA73EADF8 /* AnswersWatchApp.swift */; };
+		CC35CF1D204242A491C9256A /* ExamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5314F7DB174BDDB9EBC997 /* ExamModel.swift */; };
+		28D50D746CF642CABA8E4ADF /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806912FBEBDE45669ECC6627 /* SampleData.swift */; };
+		A0E49CEDDDAE40E2AAD9C6C9 /* WatchPaperStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36085FF071D24E2CB63FF39A /* WatchPaperStore.swift */; };
+		A52A7492157E4734BBF84FD0 /* WatchCloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42F8D0B89541F1AAE00AD9 /* WatchCloudSync.swift */; };
+		A0A835BC7F4745E593CE6F1D /* QASetUnpacker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7482316D01CF4F5A9E8576D2 /* QASetUnpacker.swift */; };
+		CEE272911E9A423F8ED9A953 /* MermaidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B3EBD92D644994BDB2C33D /* MermaidModel.swift */; };
+		2A92E24C371E4B5CADED1EBB /* MermaidParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC74623D88A450DB9C755E7 /* MermaidParser.swift */; };
+		CA29F5ADF00F4BBD9B799906 /* MermaidCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7C5D84E13242FBA911471B /* MermaidCanvasView.swift */; };
+		0E461D4F94174B1E90A3FDE0 /* AutoScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E3416E5B4D4C2FB21E17E6 /* AutoScrollController.swift */; };
+		BE068551B6B84EB89472F430 /* AnswerReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F52302DB42465AA0B9B7FF /* AnswerReaderView.swift */; };
+		A41840AFEE3A4EFDAC71B582 /* PapersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71942C8E7FE4532B67B2345 /* PapersListView.swift */; };
+		D74934668A6E43DFAE2DB99D /* QuestionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55CCB347419468BA09A51FF /* QuestionsListView.swift */; };
+		EC597083F3BB4ECEB7C43EB6 /* SettingsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6753DBA4D8DE4ADFACBDBD38 /* SettingsSheetView.swift */; };
+		FA984291EF8041BD939C4814 /* WatchTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6595D830E6B54DFD8F4A2C03 /* WatchTheme.swift */; };
+		AA11410D8FC84126ABA6401B /* WatchMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A336D024C29A4A8C99547828 /* WatchMainView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F388712399247BDB4DBC546 /* AnswersWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnswersWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78A5D0E064948CAA73EADF8 /* AnswersWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/App/AnswersWatchApp.swift"; sourceTree = "<group>"; };
+		AE5314F7DB174BDDB9EBC997 /* ExamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Models/ExamModel.swift"; sourceTree = "<group>"; };
+		806912FBEBDE45669ECC6627 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Models/SampleData.swift"; sourceTree = "<group>"; };
+		36085FF071D24E2CB63FF39A /* WatchPaperStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Storage/WatchPaperStore.swift"; sourceTree = "<group>"; };
+		4C42F8D0B89541F1AAE00AD9 /* WatchCloudSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Sync/WatchCloudSync.swift"; sourceTree = "<group>"; };
+		7482316D01CF4F5A9E8576D2 /* QASetUnpacker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Sync/QASetUnpacker.swift"; sourceTree = "<group>"; };
+		81B3EBD92D644994BDB2C33D /* MermaidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Flowchart/MermaidModel.swift"; sourceTree = "<group>"; };
+		3FC74623D88A450DB9C755E7 /* MermaidParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Flowchart/MermaidParser.swift"; sourceTree = "<group>"; };
+		FB7C5D84E13242FBA911471B /* MermaidCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Flowchart/MermaidCanvasView.swift"; sourceTree = "<group>"; };
+		98E3416E5B4D4C2FB21E17E6 /* AutoScrollController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Reader/AutoScrollController.swift"; sourceTree = "<group>"; };
+		08F52302DB42465AA0B9B7FF /* AnswerReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Reader/AnswerReaderView.swift"; sourceTree = "<group>"; };
+		C71942C8E7FE4532B67B2345 /* PapersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Views/PapersListView.swift"; sourceTree = "<group>"; };
+		D55CCB347419468BA09A51FF /* QuestionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Views/QuestionsListView.swift"; sourceTree = "<group>"; };
+		6753DBA4D8DE4ADFACBDBD38 /* SettingsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Views/SettingsSheetView.swift"; sourceTree = "<group>"; };
+		6595D830E6B54DFD8F4A2C03 /* WatchTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Views/WatchTheme.swift"; sourceTree = "<group>"; };
+		A336D024C29A4A8C99547828 /* WatchMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sources/Views/WatchMainView.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D3A4BBE3D594AC6A36DCD0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		969E3F0BE09E4E02B43A289F = {
+			isa = PBXGroup;
+			children = (
+				1F49D807921A44CE8CC07EC4 /* Sources */,
+				9B2B1460DC914922B63A3B97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B2B1460DC914922B63A3B97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F388712399247BDB4DBC546 /* AnswersWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F49D807921A44CE8CC07EC4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B78A5D0E064948CAA73EADF8 /* AnswersWatchApp.swift */,
+				AE5314F7DB174BDDB9EBC997 /* ExamModel.swift */,
+				806912FBEBDE45669ECC6627 /* SampleData.swift */,
+				36085FF071D24E2CB63FF39A /* WatchPaperStore.swift */,
+				4C42F8D0B89541F1AAE00AD9 /* WatchCloudSync.swift */,
+				7482316D01CF4F5A9E8576D2 /* QASetUnpacker.swift */,
+				81B3EBD92D644994BDB2C33D /* MermaidModel.swift */,
+				3FC74623D88A450DB9C755E7 /* MermaidParser.swift */,
+				FB7C5D84E13242FBA911471B /* MermaidCanvasView.swift */,
+				98E3416E5B4D4C2FB21E17E6 /* AutoScrollController.swift */,
+				08F52302DB42465AA0B9B7FF /* AnswerReaderView.swift */,
+				C71942C8E7FE4532B67B2345 /* PapersListView.swift */,
+				D55CCB347419468BA09A51FF /* QuestionsListView.swift */,
+				6753DBA4D8DE4ADFACBDBD38 /* SettingsSheetView.swift */,
+				6595D830E6B54DFD8F4A2C03 /* WatchTheme.swift */,
+				A336D024C29A4A8C99547828 /* WatchMainView.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91AC7B1EE5AA4D75876D5576 /* AnswersWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 996CF0EFC0634F46928FB9C8 /* Build configuration list for PBXNativeTarget "AnswersWatch" */;
+			buildPhases = (
+				AB10912113C14E688DAA503A /* Sources */,
+				6D3A4BBE3D594AC6A36DCD0A /* Frameworks */,
+				B20DC78918FA4E11B9F46558 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnswersWatch;
+			productName = AnswersWatch;
+			productReference = 2F388712399247BDB4DBC546 /* AnswersWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8D4383F3975F4D52AE7811B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					91AC7B1EE5AA4D75876D5576 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 5DB84059F09C4B0DBD670134 /* Build configuration list for PBXProject "AnswersWatch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 969E3F0BE09E4E02B43A289F;
+			productRefGroup = 9B2B1460DC914922B63A3B97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91AC7B1EE5AA4D75876D5576 /* AnswersWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B20DC78918FA4E11B9F46558 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB10912113C14E688DAA503A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B166F8EEFB6C4259A19C08AF /* AnswersWatchApp.swift in Sources */,
+				CC35CF1D204242A491C9256A /* ExamModel.swift in Sources */,
+				28D50D746CF642CABA8E4ADF /* SampleData.swift in Sources */,
+				A0E49CEDDDAE40E2AAD9C6C9 /* WatchPaperStore.swift in Sources */,
+				A52A7492157E4734BBF84FD0 /* WatchCloudSync.swift in Sources */,
+				A0A835BC7F4745E593CE6F1D /* QASetUnpacker.swift in Sources */,
+				CEE272911E9A423F8ED9A953 /* MermaidModel.swift in Sources */,
+				2A92E24C371E4B5CADED1EBB /* MermaidParser.swift in Sources */,
+				CA29F5ADF00F4BBD9B799906 /* MermaidCanvasView.swift in Sources */,
+				0E461D4F94174B1E90A3FDE0 /* AutoScrollController.swift in Sources */,
+				BE068551B6B84EB89472F430 /* AnswerReaderView.swift in Sources */,
+				A41840AFEE3A4EFDAC71B582 /* PapersListView.swift in Sources */,
+				D74934668A6E43DFAE2DB99D /* QuestionsListView.swift in Sources */,
+				EC597083F3BB4ECEB7C43EB6 /* SettingsSheetView.swift in Sources */,
+				FA984291EF8041BD939C4814 /* WatchTheme.swift in Sources */,
+				AA11410D8FC84126ABA6401B /* WatchMainView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9511140C84BC449B8B6A52D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		35C80FA3CEDC4CE7AEC9946C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		238DF2A53CCD46688BE71CA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_KEY_CFBundleDisplayName = Answers;
+				GENERATE_INFOPLIST_KEY_CFBundleIdentifier = com.learning.answers.watch;
+				GENERATE_INFOPLIST_KEY_CFBundleShortVersionString = 1.0;
+				GENERATE_INFOPLIST_KEY_WKApplication = YES;
+				GENERATE_INFOPLIST_KEY_WKWatchOnly = YES;
+				GENERATE_INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_BUNDLE_IDENTIFIER = com.learning.answers.watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		8FC260FCB383452A9AB9CF3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				CODE_SIGNING_ALLOWED = NO;
+				GENERATE_INFOPLIST_KEY_CFBundleDisplayName = Answers;
+				GENERATE_INFOPLIST_KEY_CFBundleIdentifier = com.learning.answers.watch;
+				GENERATE_INFOPLIST_KEY_CFBundleShortVersionString = 1.0;
+				GENERATE_INFOPLIST_KEY_WKApplication = YES;
+				GENERATE_INFOPLIST_KEY_WKWatchOnly = YES;
+				GENERATE_INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_BUNDLE_IDENTIFIER = com.learning.answers.watch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DB84059F09C4B0DBD670134 /* Build configuration list for PBXProject "AnswersWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9511140C84BC449B8B6A52D8 /* Debug */,
+				35C80FA3CEDC4CE7AEC9946C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		996CF0EFC0634F46928FB9C8 /* Build configuration list for PBXNativeTarget "AnswersWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				238DF2A53CCD46688BE71CA4 /* Debug */,
+				8FC260FCB383452A9AB9CF3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 8D4383F3975F4D52AE7811B6 /* Project object */;
+}
