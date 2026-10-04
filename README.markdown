@@ -110,13 +110,41 @@ Main reading interface for individual answers.
 
 ---
 
-## 6. Prompt Library
+## 6. Prompt Library & Commits
 
-Accessible via **Settings -> Prompt Library**.
+Accessible via **Settings -> Prompt Library** or via the preview buttons next to pipeline operation spinners.
 
-* **Built-in Templates**: Factory prompts for question extraction, MCQ solving, 1.5x candidate drafting, 1.0x distillation, and flowchart summary addons.
-* **Custom Prompts**: Create, edit, and assign custom prompt templates per operation.
-* **Cloud Sync Prompts**: Fetch published prompt updates from the relay server.
+### Operation Scopes
+Prompts are organized and strictly scoped under their target pipeline stages:
+1. `EXTRACT QUESTIONS`: Multimodal vision prompt extracting structured question items and marks.
+2. `SOLVE MCQS`: Direct single-answer solution key generation without essay bloat.
+3. `DRAFT ANSWERS (1.5x Expansion)`: Deep clinical draft with full differentials, drug dosages, and flowcharts.
+4. `DISTILLATION (1.0x Minimalist Bullets)`: Telegraphic bullet compression preserving all high-yield pearls.
+5. `ANSWER COMPACTION`: Word count reduction addon (-5% to -60%) using clinical shorthand arrows.
+6. `MORE GRAPHICS`: Generates supplementary tables and Mermaid decision trees.
+7. `FLOWCHART IS SUMMARY`: Generates a high-density summary flowchart prepended to the answer.
+
+### In-Place Editing & Commits
+* **Preview / Edit**: Tap `✏ Edit` on any prompt card to view or edit the template in an editable monospace text box.
+* **Commit Prompt**: Opens the commit dialog to save modifications:
+  * **Prompt Name**: Identifies the prompt in pipeline operation dropdowns.
+  * **Commit Message / Description**: Records rationale and version notes for the change.
+  * **Scoped by Operation**: Automatically registers into the corresponding operation spinner.
+* **Non-Destructive Versioning**:
+  * **Update Current**: Overwrites the active custom prompt while retaining its identifier.
+  * **Commit as New**: Issues a fresh ID, creating an independent version without overwriting previous iterations.
+* **Immutability & Lifecycle**: Factory system prompts are permanently read-only. Custom prompts display a `Custom` badge and can be edited, published, or removed via `🗑 Delete`.
+
+### Cloud Publishing & Community Prompts
+* **Publish to Cloud** (`🌐 Publish`):
+  * Available on any custom prompt card.
+  * Uploads the prompt to the dedicated `user_made_prompts` channel on Cloudflare Workers.
+  * Merges the prompt into the remote catalog by ID and timestamp so existing community submissions are not overwritten.
+* **Community Prompts Browser** (Cloud download icon in Prompt Library toolbar):
+  * Queries and lists all prompts shared across the community channel.
+  * **Preview**: Inspect the prompt text and author commit message before installing.
+  * **Import**: 1-tap import adds the community prompt directly into your local `CustomPromptStore` under its designated operation.
+  * **Import All**: Bulk imports all available community prompts in a single action.
 
 ---
 
